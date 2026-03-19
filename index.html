@@ -237,21 +237,55 @@
 </div>
 </div>
 <div class="bg-surface-container-lowest p-12 md:w-1/2">
-<form class="space-y-4">
-<div>
-<label class="block text-xs font-bold text-outline mb-1 uppercase tracking-wider">聯絡姓名</label>
-<input class="w-full bg-surface-container-high border-none rounded-lg focus:ring-2 focus:ring-primary" type="text"/>
-</div>
-<div>
-<label class="block text-xs font-bold text-outline mb-1 uppercase tracking-wider">電子郵件</label>
-<input class="w-full bg-surface-container-high border-none rounded-lg focus:ring-2 focus:ring-primary" type="email"/>
-</div>
-<div>
-<label class="block text-xs font-bold text-outline mb-1 uppercase tracking-wider">產品需求描述</label>
-<textarea class="w-full bg-surface-container-high border-none rounded-lg focus:ring-2 focus:ring-primary" rows="4"></textarea>
-</div>
-<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold hover:bg-primary-container transition-all">送出詢價委託</button>
-</form>
+<script type="text/javascript">var submitted=false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" 
+onload="if(submitted) { alert('感謝您的諮詢！我們將盡快與您聯絡。\nThank you! We will contact you shortly.'); window.location.reload(); }"></iframe>
+
+<div class="lg:col-span-7 bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-sm border border-outline-variant/10">
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSdbRGglNDpIuyFYSZn5VX75b8j83SMHBxqOJnZmz8FpQtuKqw/formResponse" 
+          method="POST" 
+          target="hidden_iframe" 
+          onsubmit="submitted=true;" 
+          class="space-y-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+                <label class="text-xs font-bold text-outline tracking-wider uppercase ml-1">姓名 / Contact Person</label>
+                <input name="entry.1411333664" class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary transition-all" placeholder="姓名" type="text" required/>
+            </div>
+            <div class="space-y-2">
+                <label class="text-xs font-bold text-outline tracking-wider uppercase ml-1">公司名稱 / Company</label>
+                <input name="entry.1315961053" class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary transition-all" placeholder="公司名稱" type="text" required/>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+                <label class="text-xs font-bold text-outline tracking-wider uppercase ml-1">電話 / Phone Number</label>
+                <input name="entry.1640443934" class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary transition-all" placeholder="02-1234-5678" type="tel" required/>
+            </div>
+            <div class="space-y-2">
+                <label class="text-xs font-bold text-outline tracking-wider uppercase ml-1">電子郵件 / Email Address</label>
+                <input name="entry.2101687650" class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary transition-all" placeholder="email@company.com" type="email" required/>
+            </div>
+        </div>
+
+        <div class="space-y-2">
+            <label class="text-xs font-bold text-outline tracking-wider uppercase ml-1">諮詢內容 / Message</label>
+            <textarea name="entry.505388526" class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary transition-all resize-none" placeholder="請描述您的產品需求與規格細節..." rows="6" required></textarea>
+        </div>
+
+        <div class="flex items-center gap-2 mb-4">
+            <input class="rounded text-primary focus:ring-primary border-outline-variant" id="privacy" type="checkbox" required/>
+            <label class="text-sm text-on-surface-variant" for="privacy">
+                我已閱讀並同意 <a href="關於我們.html" class="text-primary underline">隱私政策</a>。
+            </label>
+        </div>
+
+        <button class="w-full bg-primary-container text-white font-bold py-4 rounded-lg hover:bg-primary transition-all active:scale-[0.98]" type="submit">
+            送出訊息 / SUBMIT INQUIRY
+        </button>
+    </form>
 </div>
 </div>
 </div>
