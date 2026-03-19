@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffdcc3",
+              "inverse-primary": "#a6c8ff",
+              "on-secondary-fixed": "#021f29",
+              "on-tertiary-fixed": "#2f1500",
+              "surface-container": "#eceef0",
+              "inverse-on-surface": "#eff1f3",
+              "on-primary-fixed": "#001c3b",
+              "on-secondary": "#ffffff",
+              "surface-bright": "#f8f9fb",
+              "on-secondary-fixed-variant": "#304a55",
+              "on-primary": "#ffffff",
+              "tertiary": "#522900",
+              "on-surface": "#191c1e",
+              "surface-container-highest": "#e0e3e5",
+              "outline-variant": "#c3c6d1",
+              "surface-variant": "#e0e3e5",
+              "surface-container-low": "#f2f4f6",
+              "error-container": "#ffdad6",
+              "surface-tint": "#335f99",
+              "on-primary-fixed-variant": "#144780",
+              "on-error-container": "#93000a",
+              "primary": "#003466",
+              "outline": "#737781",
+              "background": "#f8f9fb",
+              "inverse-surface": "#2d3133",
+              "primary-fixed": "#d5e3ff",
+              "on-tertiary-container": "#f7a967",
+              "primary-fixed-dim": "#a6c8ff",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#cbe7f5",
+              "primary-container": "#1a4b84",
+              "on-primary-container": "#93bcfc",
+              "on-surface-variant": "#424750",
+              "secondary-fixed-dim": "#afcbd8",
+              "on-tertiary-fixed-variant": "#6e3900",
+              "secondary-container": "#cbe7f5",
+              "surface-container-high": "#e6e8ea",
+              "surface": "#f8f9fb",
+              "secondary": "#48626e",
+              "on-tertiary": "#ffffff",
+              "on-error": "#ffffff",
+              "surface-dim": "#d8dadc",
+              "tertiary-fixed-dim": "#ffb77d",
+              "on-secondary-container": "#4e6874",
+              "on-background": "#191c1e",
+              "tertiary-container": "#733c00",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Public Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100/20 shadow-sm font-headline tracking-tight">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold text-blue-900">山宏塑膠有限公司</div>
+<!-- Desktop Links -->
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-blue-900 dark:text-blue-400 border-b-2 border-blue-900 dark:border-blue-400 pb-1 font-bold" href="index.html">首頁</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors" href="產品介紹.html">產品介紹</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors" href="關於我們.html">關於我們</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors" href="聯絡我們.html">聯絡我們</a>
+<a href="聯絡我們.html">
+    <button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-bold hover:opacity-80 transition-all active:scale-95 duration-150">
+        詢價委託
+    </button>
+</a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button id="menu-btn" class="block lg:hidden text-primary">
+    <span class="material-symbols-outlined">menu</span>
+</button>
+
+<div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg lg:hidden">
+    <ul class="flex flex-col p-4">
+        <li><a href="index.html" class="block py-2">首頁</a></li>
+        <li><a href="關於我們.html" class="block py-2">關於我們</a></li>
+        <li><a href="聯絡我們.html" class="block py-2">聯絡我們</a></li>
+    </ul>
+</div>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Hero / Header Section -->
+<header class="max-w-7xl mx-auto px-8 mb-16 pt-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+<div>
+<span class="text-primary font-bold tracking-widest label-md block mb-4">INDUSTRIAL EXCELLENCE</span>
+<h1 class="text-5xl font-extrabold font-headline text-on-surface leading-tight tracking-tighter mb-6">
+                        專業塑膠包裝<br/>工程解決方案
+                    </h1>
+</div>
+<div class="pb-2">
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-md">
+                        我們提供從材料研發、精準印刷到客製化設計的一站式服務，專注於 PE, PP 與 BOPP 高性能包材的生產。
+                    </p>
+</div>
+</div>
+</header>
+<!-- Product Grid -->
+<section class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Product Card: PE -->
+<div class="group flex flex-col bg-surface-container-low overflow-hidden transition-all duration-300 hover:bg-primary-container">
+<div class="aspect-[4/3] overflow-hidden">
+<img alt="Polyethylene packaging rolls" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="High quality clear PE plastic packaging rolls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByND_8odKowKliuNXSVxahMnk9MO3AHwsWVTIbE32yGxHmDm7KROoYY9N-_aL1eaRqpGiwiZax89qKaencPqz13zasXoakoH4IR2dpggw8HdrF1vTpXPq5fc7j6DUcGUMu_9I_DFmqlRHif8mFFNkJ-b7Y-V5OIiXNh2ha5qHPS8BSwifTGREmG26eUCcTMYefSEXVhLUxBRxhkf8exrFabZaFer0WEd5gV5owfPHGJobdXUKRwvf9qEerWK1kJPdtWNIfCOIMR96q"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-bold font-headline group-hover:text-on-primary-container">PE (聚乙烯)</h3>
+<span class="bg-surface-container-highest px-3 py-1 text-xs font-bold rounded group-hover:bg-primary/20">LOW DENSITY</span>
+</div>
+<p class="text-on-surface-variant mb-6 group-hover:text-on-primary-container/80 line-clamp-2">
+                            具備極佳的韌性與防潮性，廣泛應用於重裝袋、內襯袋及各式工業用包裝，能承受長途運輸的挑戰。
+                        </p>
+<div class="mt-auto space-y-3">
+<div class="flex items-center gap-2 group-hover:text-on-primary-container">
+<span class="material-symbols-outlined text-sm">settings_input_component</span>
+<span class="text-xs font-semibold uppercase tracking-wider">抗撕裂強度：優異</span>
+</div>
+<div class="flex items-center gap-2 group-hover:text-on-primary-container">
+<span class="material-symbols-outlined text-sm">opacity</span>
+<span class="text-xs font-semibold uppercase tracking-wider">透濕率：極低</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card: PP -->
+<div class="group flex flex-col bg-surface-container-low overflow-hidden transition-all duration-300 hover:bg-primary-container">
+<div class="aspect-[4/3] overflow-hidden">
+<img alt="Polypropylene food packaging" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Transparent high gloss PP plastic food bags" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFFPWC8a6e38EnDhBsqqx-O70V4FZp64qllp2K1CG7Ekq-lgvWSV0iKhiP3_jIsPRdUE-Wq3MQS4S3sOIrMaZnJI7QiV7P45BSL_IUqH8IlDDYloziJHPCZQV72klay9i0bMOPgTq2eVHgCahA7XcODmGIQdAIN8mAzhpmggxo84ccvfFXTjsgBOXyIijgOebKjWYYuB79cIECh6ulo0SlnvnpT5WpXMdinlApjTvtoSDS0ygzcV_3PWsNZa3-DPCnegCtsQOiHyX2"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-bold font-headline group-hover:text-on-primary-container">PP (聚丙烯)</h3>
+<span class="bg-surface-container-highest px-3 py-1 text-xs font-bold rounded group-hover:bg-primary/20">HIGH GLOSS</span>
+</div>
+<p class="text-on-surface-variant mb-6 group-hover:text-on-primary-container/80 line-clamp-2">
+                            高透明度與卓越的光澤感，是食品、服飾與精緻禮品包裝的首選，展現內容物的最美樣貌。
+                        </p>
+<div class="mt-auto space-y-3">
+<div class="flex items-center gap-2 group-hover:text-on-primary-container">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span class="text-xs font-semibold uppercase tracking-wider">透明度：高等級</span>
+</div>
+<div class="flex items-center gap-2 group-hover:text-on-primary-container">
+<span class="material-symbols-outlined text-sm">thermostat</span>
+<span class="text-xs font-semibold uppercase tracking-wider">耐熱性：穩定</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card: BOPP -->
+<div class="group flex flex-col bg-surface-container-low overflow-hidden transition-all duration-300 hover:bg-primary-container">
+<div class="aspect-[4/3] overflow-hidden">
+<img alt="BOPP film with high detail printing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Multi-layered BOPP film with vibrant graphics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ2X-3H1gpXMnBZMrKZ7OthVtJWzQqJWk7a3rQWei5QdZBLcLe732km5X0_tMbRfPUsqn26nPrJB41FS3gquxyj8zR3_ZIJw2cSMKhCUeVLZ7WsVKoP8pawlWaDpaVl2c1G3k3XHm45nhvFJQVu8A0nsjUSm0LnRxb0uS6Ip09zrn5EskRUJMX0cz_P7qTrpAf5XoCGP7h6BY0nHMHKk4QqOKl-dfc-KTaNVdeJeiPyszLw9iiTqOn4MKMRPmikM9j1SbCmqKsrgW6"/>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-2xl font-bold font-headline group-hover:text-on-primary-container">BOPP</h3>
+<span class="bg-surface-container-highest px-3 py-1 text-xs font-bold rounded group-hover:bg-primary/20">PREMIUM PRINT</span>
+</div>
+<p class="text-on-surface-variant mb-6 group-hover:text-on-primary-container/80 line-clamp-2">
+                            經雙向拉伸處理，具備極高的機械強度與平整度，最適合多色高速印刷與自動包裝線使用。
+                        </p>
+<div class="mt-auto space-y-3">
+<div class="flex items-center gap-2 group-hover:text-on-primary-container">
+<span class="material-symbols-outlined text-sm">print</span>
+<span class="text-xs font-semibold uppercase tracking-wider">印刷適性：頂級</span>
+</div>
+<div class="flex items-center gap-2 group-hover:text-on-primary-container">
+<span class="material-symbols-outlined text-sm">square_foot</span>
+<span class="text-xs font-semibold uppercase tracking-wider">尺寸穩定：優</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Capabilities Section (Bento Grid Style) -->
+<section class="max-w-7xl mx-auto px-8 mt-24">
+<h2 class="text-3xl font-bold font-headline mb-12 text-center md:text-left">核心競爭力</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Print Quality -->
+<div class="md:col-span-8 bg-surface-container-highest p-12 relative overflow-hidden flex flex-col justify-end min-h-[400px]">
+<div class="absolute inset-0 z-0">
+<img alt="Industrial printing machine" class="w-full h-full object-cover opacity-30 mix-blend-multiply" data-alt="Abstract colorful light patterns representing high speed printing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLa_BXavum_L4HP56UuLwIki4N87ot81e0tekuY3ZMdExRtYVnq5Ia2w3AclOXuAXijFC-WJyqXbX7cqPqNw6oPIEZFcgIL4RsF9kiTsY-Ckv6p4I57X140vmmjigyKEa7eAOpjOupGZE_bUGME37g76J3rrSDMupNLW4fYU0bTVqZAKl3_MsAFywylY1j9Ix5x-50SYq9EFappf-OBfZO3Q5TNPBQpr0cJIdMvNxxO05ftjI3X-EYLreL8p-PEAEIcTMEeLSEnFzg"/>
+</div>
+<div class="relative z-10">
+<h4 class="text-4xl font-black font-headline mb-4 tracking-tighter">卓越印刷工藝</h4>
+<p class="text-on-surface-variant max-w-lg mb-8 text-lg">
+                            引進最新多色高速凹版印刷機，確保每一個細節都清晰精準，從漸層色到細小文字皆能完美呈現您的品牌形象。
+                        </p>
+<div class="flex flex-wrap gap-4">
+<span class="bg-primary text-white px-4 py-2 text-sm font-bold uppercase tracking-wider">Pantone 色彩管理</span>
+<span class="bg-primary text-white px-4 py-2 text-sm font-bold uppercase tracking-wider">多層複合技術</span>
+</div>
+</div>
+</div>
+<!-- Custom Design -->
+<div class="md:col-span-4 bg-tertiary-fixed p-12 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-tertiary text-4xl mb-6">design_services</span>
+<h4 class="text-2xl font-bold font-headline text-on-tertiary-fixed mb-4">客製化設計服務</h4>
+<p class="text-on-tertiary-fixed-variant leading-relaxed">
+                            不僅是生產者，我們更是您的設計夥伴。從尺寸規劃、厚度建議到視覺排版，專業團隊全程協助。
+                        </p>
+</div>
+<div class="mt-8">
+<a class="inline-flex items-center gap-2 font-bold text-tertiary hover:gap-4 transition-all" href="#">
+                            立即預約諮詢 <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Technical Specs -->
+<div class="md:col-span-4 bg-surface-container-low p-8 border border-outline-variant/20">
+<h5 class="text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">verified</span>
+                        品質認證
+                    </h5>
+<ul class="space-y-4 text-on-surface-variant font-medium">
+<li class="flex justify-between border-b border-outline-variant/20 pb-2">
+<span>SGS 檢驗</span>
+<span class="text-primary">符合標準</span>
+</li>
+<li class="flex justify-between border-b border-outline-variant/20 pb-2">
+<span>食品包裝級</span>
+<span class="text-primary">提供證明</span>
+</li>
+<li class="flex justify-between">
+<span>環境友善材料</span>
+<span class="text-primary">可回收</span>
+</li>
+</ul>
+</div>
+<!-- Production Capacity -->
+<div class="md:col-span-8 bg-surface-container-low p-8 flex items-center">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 w-full text-center">
+<div>
+<div class="text-3xl font-black text-primary font-headline">20+</div>
+<div class="text-xs font-bold text-outline uppercase mt-1">年產製經驗</div>
+</div>
+<div>
+<div class="text-3xl font-black text-primary font-headline">500k+</div>
+<div class="text-xs font-bold text-outline uppercase mt-1">日產能量</div>
+</div>
+<div>
+<div class="text-3xl font-black text-primary font-headline">100%</div>
+<div class="text-xs font-bold text-outline uppercase mt-1">台灣製造</div>
+</div>
+<div>
+<div class="text-3xl font-black text-primary font-headline">A+</div>
+<div class="text-xs font-bold text-outline uppercase mt-1">客戶滿意度</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-8 mt-24">
+<div class="bg-primary p-16 flex flex-col md:flex-row justify-between items-center gap-12 rounded-lg">
+<div class="text-white">
+<h2 class="text-4xl font-black font-headline mb-4 tracking-tight">準備好提升您的包裝質感了嗎？</h2>
+<p class="text-on-primary-container text-xl opacity-90">聯繫我們獲取免費樣品及專業報價諮詢。</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<a href="聯絡我們.html"><button class="bg-white text-primary px-10 py-4 font-bold rounded-lg hover:bg-surface-container-lowest transition-colors whitespace-nowrap">
+                        立即聯絡
+                    </button></a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-16 pb-8 bg-slate-50 border-t border-slate-100">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<div class="font-bold text-lg text-blue-900 mb-6">山宏塑膠有限公司</div>
+<p class="text-slate-500 font-body text-sm leading-relaxed">
+                    致力於提供最高品質的工業與商用塑膠包裝方案，以創新技術與穩定品質贏得客戶信賴。
+                </p>
+</div>
+<div>
+<h6 class="font-bold text-blue-900 mb-6">產品分類</h6>
+<ul class="space-y-3 font-body text-sm">
+<li>PE 包裝材料</a></li>
+<li>PP 透明袋</a></li>
+<li>BOPP 彩色印刷</a></li>
+<li>客製化提袋</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-blue-900 mb-6">快速連結</h6>
+<ul class="space-y-3 font-body text-sm">
+<li><a class="text-slate-500 hover:text-blue-700 transition-all" href="產品介紹.html">產品介紹</a></li>
+<li><a class="text-slate-500 hover:text-blue-700 transition-all" href="聯絡我們.html">聯絡我們</li>
+<li><a class="text-slate-500 hover:text-blue-700 transition-all" href="關於我們.html">關於我們</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-blue-900 mb-6">法律政策</h6>
+<ul class="space-y-3 font-body text-sm">
+<li>隱私政策</a></li>
+<li>服務條款</a></li>
+</ul>
+<div class="mt-8 pt-8 border-t border-slate-200">
+<p class="text-xs text-slate-400">台北市大同區迪化街二段140號</p>
+<p class="text-xs text-slate-400">TEL: (02)25951043</p>
+</div>
+</div>
+</div>
+<div class="mt-16 px-8 max-w-7xl mx-auto border-t border-slate-200 pt-8 text-center md:text-left">
+<p class="text-slate-500 font-body text-xs">
+                © 2024 山宏塑膠有限公司 Shan Hong Plastic Co., Ltd. All Rights Reserved.
+            </p>
+</div>
+</footer>
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Optional: Close menu when clicking a link
+    const navLinks = mobileMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+</script>
+</body></html>
